@@ -1,0 +1,25 @@
+<h1>Restaurants!</h1>
+
+#if ($restaurants)
+  <ul>
+    #foreach ($restaurant in $restaurants)
+      <li>$restaurant.getName()</li>
+    #end
+  </ul>
+#else
+  <p>No restaurants!</p>
+#end
+
+<form action="/restaurants" method="post">
+  <div class="form-group">
+    <label for="restaurantName">Restaurant Name</label>
+    <input id="restaurantName" name="restaurantName" class="form-control" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="starNumber">Stars</label>
+    <input id="starNumber" name="starNumber" class="form-control" type="text">
+  </div>
+
+  <button type="submit" class="btn btn-danger">Add Restaurant</button>
+</form>
